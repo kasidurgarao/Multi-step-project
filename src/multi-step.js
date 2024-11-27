@@ -23,9 +23,11 @@ let subheader = [
 let counter = 1;
 
 nextbutton.addEventListener("click", () => {
-  if (counter === 1 && pageonevalidation(counter)) {
-    movetonextpage(counter);
-    counter++;
+  if (counter === 1) {
+    if (pageonevalidation(counter)) {
+      movetonextpage(counter);
+      counter++;
+    }
   } else {
     movetonextpage(counter);
     counter++;
@@ -265,3 +267,16 @@ alladons.forEach((element, index) => {
     console.log(selectedServices);
   });
 });
+
+// /PAGE FOUR FUNCTIONALITY
+
+let getlink = document.querySelector('a')
+getlink.addEventListener('click',()=>{
+    let page2 = document.querySelector('.page2');
+    let currentPage = document.querySelector(`.page${counter}`);
+    currentPage.classList.add('hidden');
+    page2.classList.remove('hidden');
+    changeheader.innerHTML = header[1];
+    changesubheader.innerHTML = subheader[1];
+    counter=2
+})
