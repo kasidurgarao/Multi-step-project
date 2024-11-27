@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Multi Step</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-100 md:h-screen flex justify-center items-center overflow-hidden">
+    <div class="md:bg-white flex flex-col md:flex-row md:gap-4 gap-0 rounded-md w-full max-w-4xl ">
+        <!-- Sidebar -->
+        <div class="relative flex justify-center">
+            <img src="./assets/images/bg-sidebar-desktop.svg" alt="Desktop Sidebar"
+                class="hidden md:block w-full md:p-6">
+            <img src="./assets/images/bg-sidebar-mobile.svg" alt="Mobile Sidebar"
+                class="md:hidden w-full object-contain">
+
+            <div
+                class="absolute top-4 md:top-16 flex justify-center md:flex-col flex-row md:items-start  gap-6 md:mx-0 md:px-16">
+                <div class="flex items-center">
+                    <div
+                        class="w-10 h-10 rounded-full bg-blue-200 text-black font-bold flex justify-center items-center step1">
+                        1</div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 1</p>
+                        <h1 class="text-white font-bold hidden md:block">YOUR INFO</h1>
+                    </div>
+                </div>
+                <!-- Other steps -->
+                <div class="flex items-center">
+                    <div
+                        class="w-10 h-10 rounded-full border border-white text-white font-bold flex justify-center items-center step2">
+                        2</div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 2</p>
+                        <h1 class="text-white font-bold">SELECT PLAN</h1>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div
+                        class="w-10 h-10 rounded-full border border-white text-white font-bold flex justify-center items-center step3">
+                        3</div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 3</p>
+                        <h1 class="text-white font-bold">ADD-ONS</h1>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div
+                        class="w-10 h-10 rounded-full border border-white text-white font-bold flex justify-center items-center step4">
+                        4</div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 4</p>
+                        <h1 class="text-white font-bold">SUMMARY</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bg-white rounded-md flex flex-col flex-1 m-4 relative -mt-20 md:-mt-0 ">
+
+            <!-- PAGE ONE -->
+
+            <div id="personal-info" class="p-8 md:p-12">
+                <div class="mb-6 header-change">
+                    <h1 class="text-2xl text-blue-900 font-extrabold mb-2">Personal Info</h1>
+                    <p class="text-gray-500">Please provide your name, email address, and phone number.</p>
+                </div>
+                <div id="personal-info-form" class="space-y-4 page1">
+
+                    <div class="flex flex-col">
+                        <div class="flex justify-between items-center ">
+                            <label class="block text-blue-900 font-medium mb-1" for="name" id="name-label">Name</label>
+                            <p id="name-error" class="text-red-900 font-medium hidden mb-1">This Field is required.</p>
+                        </div>
+                        <input type="text" id="name" placeholder="e.g. Stephen King"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-400 focus:border-blue-600 focus:outline-none">
+                    </div>
+
+
+                    <div class="flex flex-col">
+                        <div class="flex justify-between items-center">
+                            <label class="block text-blue-900 font-medium mb-1" for="email" id="email-label">Email
+                                Address</label>
+                            <p id="email-error" class="text-red-900 font-medium hidden mb-1">This Field is required.</p>
+                        </div>
+                        <input type="email" id="email" placeholder="e.g. Stephenking@lorem.com"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-400 focus:border-blue-600 focus:outline-none">
+                    </div>
+
+
+                    <div class="flex flex-col">
+                        <div class="flex justify-between items-center">
+                            <label class="block text-blue-900 font-medium mb-1" for="phone" id="phone-label">Phone
+                                Number</label>
+                            <p id="phone-error" class="text-red-900 font-medium hidden mb-1">This Field is required.</p>
+                        </div>
+                        <input type="tel" id="phone" placeholder="e.g. +1 234 567 890"
+                            class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-400 focus:border-blue-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <!-- PAGE TWO -->
+
+                <div id="second-page " class="space-y-4 hidden page2">
+                    <div class="flex md:flex-row flex-col gap-4 multi-cards">
+                        <!-- Arcade -->
+                        <div
+                            class="md:w-2/6  w-full h-auto border rounded-md flex flex-col md:flex-col  items-start gap-2 card">
+                            <div class="flex md:flex-col flex-row items-center md:items-start gap-4 px-4 py-2 md:pt-4">
+                                <img src="./assets/images/icon-arcade.svg" alt=""
+                                    class="w-12 h-14  md:w-auto md:h-auto md:mb-6">
+                                <div class="text-left">
+                                    <h2 class="font-bold">Arcade</h2>
+                                    <p class="text-gray-500 text-sm font-semibold price" data-yearly="90"
+                                        data-monthly="9">$9/mo</p>
+                                    <p class="text-blue-900 text-xs font-semibold md:pb-2 free-month"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advanced -->
+                        <div
+                            class="md:w-2/6  w-full h-auto border rounded-md flex flex-col md:flex-col  items-start gap-2 card">
+                            <div class="flex md:flex-col flex-row items-center md:items-start gap-4 px-4 py-2 md:pt-4">
+                                <img src="./assets/images/icon-advanced.svg" alt=""
+                                    class="w-12 h-14 md:w-auto md:h-auto md:mb-6">
+                                <div class="text-left">
+                                    <h2 class="font-bold">Advanced</h2>
+                                    <p class="text-gray-500 text-sm font-semibold price" data-yearly="120"
+                                        data-monthly="12">$12/mo</p>
+                                    <p class="text-blue-900 text-xs font-semibold md:pb-2 free-month"></p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pro -->
+                        <div
+                            class="md:w-2/6  w-full h-auto border rounded-md flex flex-col md:flex-col  items-start gap-2 card">
+                            <div class="flex md:flex-col flex-row items-center md:items-start gap-4 px-4 py-2 md:pt-4">
+                                <img src="./assets/images/icon-pro.svg" alt=""
+                                    class="w-12 h-14 md:w-auto md:h-auto md:mb-6">
+                                <div class="text-left">
+                                    <h2 class="font-bold">Pro</h2>
+                                    <p class="text-gray-500 text-sm font-semibold price" data-yearly="150"
+                                        data-monthly="15">$15/mo</p>
+                                    <p class="text-blue-900 text-xs font-semibold md:pb-2 free-month"></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="flex items-center justify-center space-x-4 pt-4">
+
+                        <div class="flex items-center justify-center  h-12 bg-gray-50 w-full space-x-4">
+                            <span class="font-bold text-blue-900 togglemonth">Monthly</span>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" id="togglebutton">
+                                <div
+                                    class="relative w-10 h-5 bg-blue-900 rounded-full peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white  after:border after:rounded-full after:h-4 after:w-4 after:transition-all ">
+                                </div>
+                                <span class="ms-3 text-sm font-medium  dark:text-gray-300"></span>
+                            </label>
+                            <span class="font-medium text-gray-600 peer-checked:text-blue-900 toggleyear">Yearly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE THREE -->
+
+                <div class="flex flex-col gap-4 hidden page3">
+                    <div class=" flex items-center justify-between md:h-20  w-full border rounded-lg md:p-4 p-2 alladdons">
+                        <div class="flex items-center ">
+                            <input type="checkbox" class="md:(w-5 h-5) w-6 h-5 input1">
+                            <div class="md:px-6 px-4">
+                                <h2 class="font-bold text-blue-900">Online services</h2>
+                                <p class="text-sm md:text-sm text-gray-600 font-medium">Access to multiplayer games</p>
+                            </div>
+                        </div>
+                        <p class="text-indigo-900 font-medium text-sm addon">+$1/mo</p>
+                    </div>
+                    <div class=" flex items-center justify-between md:h-20 w-full border rounded-lg md:p-4 p-2 alladdons">
+                        <div class="flex items-center ">
+                            <input type="checkbox" class="md:(w-5 h-5) w-6 h-5 input1">
+                            <div class="md:px-6 px-4">
+                                <h2 class="font-bold text-blue-900">Large storage</h2>
+                                <p class="text-sm text-gray-600 font-medium">Extra 1TB of cloud storage</p>
+                            </div>
+                        </div>
+                        <p class="text-indigo-900 font-medium text-sm addon">+$2/mo</p>
+
+                    </div>
+                    <div class=" flex items-center justify-between md:h-20 border rounded-lg md:p-4 p-2 alladdons">
+                        <div class="flex items-center  ">
+                            <input type="checkbox" class="md:(w-5 h-5) w-6 h-5 input1">
+                            <div class="md:px-6 px-4">
+                                <h2 class="font-bold text-blue-900">Customizable profile</h2>
+                                <p class="text-sm text-gray-600 font-medium">custom theme on your profile</p>
+                            </div>
+                        </div>
+                        <p class="text-indigo-900 font-medium text-sm addon">+$2/mo</p>
+
+                    </div>
+                </div>
+            </div>
+            <div id="navigation-buttons"
+                class=" p-4 md:p-12  bg-white flex justify-between fixed bottom-0 left-0 w-full md:static ">
+                <button id="go-back" type="button"
+                    class="text-blue-900 px-4 py-2 font-bold rounded-md Disable invisible">Go Back</button>
+                <button id="next-step" type="button" class="bg-blue-900 text-white px-4 py-2 rounded-md ">Next
+                    Step</button>
+            </div>
+        </div>
+    </div>
+    <script src="multi-step.js"></script>
+</body>
+
+</html>
